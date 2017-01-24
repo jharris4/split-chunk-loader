@@ -8,7 +8,7 @@ The original fork was created in the [require-error-handler-webpack-plugin](http
 
 ## Installation
 
-** require.ensure error handling must be activated in webpack for this loaded to work **
+**require.ensure error handling must be activated in webpack for this loaded to work**
 
 ### Webpack 1.x
 

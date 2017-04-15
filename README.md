@@ -22,13 +22,17 @@ Follow [the instructions for configuring the require-error-handler-webpack-plugi
 npm install split-chunk-loader --save-dev
 ```
 
-### Webpack 2.2+
+### Webpack >= 2.2 < 2.4
 
 ``` shell
 npm install require-ensure-error-webpack-plugin --save-dev
 ```
 
 Follow [the instructions for configuring the require-ensure-error-webpack-plugin](https://github.com/jharris4/require-ensure-error-webpack-plugin/blob/master/README.md)
+
+### Webpack >= 2.4
+
+The require-ensure-error-webpack-plugin is no longer needed with Webpack 2.4 and above since the feature has been merged into Webpack itself.
 
 ``` shell
 npm install split-chunk-loader --save-dev

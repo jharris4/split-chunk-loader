@@ -1,5 +1,7 @@
 # split-chunk-loader for webpack
 
+A Webpack bundle-loader that supports bundle loading error callbacks.
+
 ## Credits
 
 This loader is a fork of the [bundle-loader](https://github.com/webpack/bundle-loader).
@@ -51,6 +53,8 @@ var waitForChunk = require("split-chunk-loader!./file.js");
 waitForChunk(function(file) {
 	// use file like is was required with
 	// var file = require("./file.js");
+}, function(error) {
+        // do something with the error
 });
 // wraps the require in a require.ensure block
 ```
@@ -62,6 +66,8 @@ var load = require("split-chunk-loader?lazy!./file.js");
 
 // The chunk is not requested until you call the load function
 load(function(file) {
+
+}, function(error) {
 
 });
 ```

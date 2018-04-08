@@ -1,5 +1,7 @@
 # split-chunk-loader for webpack
 
+A Webpack bundle-loader that supports bundle loading error callbacks.
+
 ## Credits
 
 This loader is a fork of the [bundle-loader](https://github.com/webpack/bundle-loader).
@@ -22,13 +24,17 @@ Follow [the instructions for configuring the require-error-handler-webpack-plugi
 npm install split-chunk-loader --save-dev
 ```
 
-### Webpack 2.2+
+### Webpack >= 2.2 < 2.4
 
 ``` shell
 npm install require-ensure-error-webpack-plugin --save-dev
 ```
 
 Follow [the instructions for configuring the require-ensure-error-webpack-plugin](https://github.com/jharris4/require-ensure-error-webpack-plugin/blob/master/README.md)
+
+### Webpack >= 2.4
+
+The require-ensure-error-webpack-plugin is no longer needed with Webpack 2.4 and above since the feature has been merged into Webpack itself.
 
 ``` shell
 npm install split-chunk-loader --save-dev
@@ -47,6 +53,8 @@ var waitForChunk = require("split-chunk-loader!./file.js");
 waitForChunk(function(file) {
 	// use file like is was required with
 	// var file = require("./file.js");
+}, function(error) {
+        // do something with the error
 });
 // wraps the require in a require.ensure block
 ```
@@ -58,6 +66,8 @@ var load = require("split-chunk-loader?lazy!./file.js");
 
 // The chunk is not requested until you call the load function
 load(function(file) {
+
+}, function(error) {
 
 });
 ```

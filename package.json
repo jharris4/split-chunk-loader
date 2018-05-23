@@ -1,6 +1,6 @@
 {
   "name": "split-chunk-loader",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Jon Harris @jharris4",
   "description": "split chunk loader module for webpack",
   "dependencies": {
